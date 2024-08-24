@@ -2,7 +2,7 @@ type buttonProps = {
   buttonStyle: string;
   buttonSize: string;
   type: "submit" | "button";
-  onClick: MouseEvent;
+  onClick: any;
   text: string;
 };
 export default function Button({
@@ -26,6 +26,7 @@ export default function Button({
     <button
       className={`btn ${checkButtonStyle} ${checkButtonSize}`}
       type={type}
+      onClick={onClick}
     >
       {text}
     </button>
