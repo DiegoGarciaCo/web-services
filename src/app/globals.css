@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* custom btn styles */
+.btn--primary {
+  color: #fff;
+}
+
+.btn--outline {
+  border: solid 2px;
+  background-color: transparent;
+}
