@@ -1,10 +1,5 @@
-type buttonProps = {
-  buttonStyle: string;
-  buttonSize: string;
-  type: "submit" | "button";
-  onClick: any;
-  text: string;
-};
+import { buttonProps } from "@/lib/definitions";
+
 export default function Button({
   buttonStyle,
   buttonSize,
@@ -24,7 +19,7 @@ export default function Button({
 
   return (
     <button
-      className={`btn ${checkButtonStyle} ${checkButtonSize}`}
+      className={`btn ${checkButtonStyle} ${buttonSize}`}
       type={type}
       onClick={onClick}
     >

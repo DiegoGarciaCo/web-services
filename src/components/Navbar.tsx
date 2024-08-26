@@ -1,7 +1,24 @@
-import Link from "next/link";
+import NavLinks from "./NavLinks";
+import Button from "./Button";
 
 export default function Navbar() {
-  <nav>
-    <h1>navbar</h1>
-  </nav>;
+  return (
+    <nav className="flex content-center justify-center sticky">
+      {/* left logo and links container */}
+      <div className="flex justify-around">
+        <h1>Logo</h1>
+        <NavLinks />
+      </div>
+      {/* Right button */}
+      <div className="flex justify-end">
+        <Button
+          buttonStyle="btn--outline"
+          buttonSize="btn--medium"
+          type="button"
+          onClick
+          text="Contact"
+        />
+      </div>
+    </nav>
+  );
 }
