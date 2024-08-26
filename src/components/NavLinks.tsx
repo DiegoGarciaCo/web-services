@@ -21,5 +21,16 @@ export default function NavLinks() {
     },
   ];
 
-  return <div className="flex justify-center content-center"></div>;
+  return (
+    <div className="flex justify-center content-center">
+      {/* create links  */}
+      {links.map((link, index) => {
+        return (
+          <Link key={index} href={link.path}>
+            {link.name}
+          </Link>
+        );
+      })}
+    </div>
+  );
 }
