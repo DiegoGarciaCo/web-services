@@ -34,6 +34,7 @@
   color: #0d144f;
 }
 
+/* Navlinks styles */
 .links {
   display: flex;
   justify-content: space-between;
@@ -45,4 +46,29 @@
 .links:hover {
   color: #0d144f;
   transition: all 0.3s;
+}
+
+/* social media Icon Styles */
+.social {
+  padding: 0.5rem;
+  cursor: pointer;
+}
+.social.facebook {
+  color: #1877f2;
+}
+.social.twitter {
+  color: #1da1f2;
+}
+.social.instagram {
+  color: #c13584;
+}
+
+.social:hover {
+  color: #0d144f;
+  transition: all 0.3s;
+}
+
+/* Footer styles */
+footer {
+  background-color: #0a0612;
 }
