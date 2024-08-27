@@ -22,11 +22,11 @@ export default function NavLinks() {
   ];
 
   return (
-    <div className="flex justify-center content-center">
+    <div className="flex justify-evenly content-center gap-8">
       {/* create links  */}
       {links.map((link, index) => {
         return (
-          <Link key={index} href={link.path}>
+          <Link key={index} href={link.path} className="links">
             {link.name}
           </Link>
         );
