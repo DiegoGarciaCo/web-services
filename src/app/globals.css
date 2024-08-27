@@ -5,9 +5,44 @@
 /* custom btn styles */
 .btn--primary {
   color: #fff;
+  background-color: #0d144f;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s;
 }
 
 .btn--outline {
-  border: solid 2px;
+  border: solid 2px #0d144f;
   background-color: transparent;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.btn--outline:hover {
+  background-color: #0d144f;
+  color: #fff;
+}
+.btn--primary:hover {
+  background-color: #fff;
+  color: #0d144f;
+}
+
+.links {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem;
+  font-weight: 600;
+}
+
+.links:hover {
+  color: #0d144f;
+  transition: all 0.3s;
 }
