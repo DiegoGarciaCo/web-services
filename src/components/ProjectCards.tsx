@@ -2,32 +2,37 @@ export default function ProjectCards() {
   const projectCards = [
     {
       title: "Real Estate Website",
-      description: "This is a Real Estate website",
-      image: "/image-1.jpg",
+      description:
+        "lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      image: "/Image_one.jpg",
       alt: "Project 1",
     },
     {
       title: "Auto Detailing Website",
-      description: "This is a Auto detailing website",
-      image: "/image-2.jpg",
+      description:
+        "lotem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      image: "/Image_two.jpg",
       alt: "Project 2",
     },
     {
       title: "Mechanic Shop Website",
-      description: "This is a Mechanic shop website",
-      image: "/image-3.jpg",
+      description:
+        "lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      image: "/Image_three.jpg",
       alt: "Project 3",
     },
     {
       title: "Barber Shop Website",
-      description: "This is a Barber shop website",
-      image: "/image-4.jpg",
+      description:
+        "lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      image: "/Image_four.jpg",
       alt: "Project 4",
     },
     {
       title: "E-commerce Website",
-      description: "This is a E-commerce website",
-      image: "/image-5.jpg",
+      description:
+        "lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      image: "/Image_five.jpg",
       alt: "Project 5",
     },
   ];
