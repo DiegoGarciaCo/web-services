@@ -38,8 +38,28 @@ export default function Home() {
         </div>
       </section>
       <main>
-        <section className="min-w-full min-h-screen border-l-indigo-950">
+        <section className="min-w-full min-h-screen">
+          <h2 className="text-3xl font-bold text-center px-5 pb-5">Projects</h2>
+          <p className="text-center pb-5 text-lg">
+            Here are some of the projects that I have worked on
+          </p>
           <ProjectCards />
+          <div className="flex justify-center items-center content-center gap-4 p-5 mb-8">
+            <Button
+              buttonSize="btn--medium"
+              buttonStyle="btn--primary"
+              type="button"
+              text="View More"
+              onClick
+            />
+            <Button
+              buttonSize="btn--medium"
+              buttonStyle="btn--outline"
+              type="button"
+              text="Contact"
+              onClick
+            />
+          </div>
         </section>
       </main>
     </>
