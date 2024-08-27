@@ -32,7 +32,7 @@ export default function ProjectCards() {
     },
   ];
   return (
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-4 m-5 py-5">
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-4 my-5 p-5">
       {projectCards.map((project, index) => (
         <div
           key={index}

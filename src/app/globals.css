@@ -2,6 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+/* global styles */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 /* custom btn styles */
 .btn--primary {
   color: #fff;
