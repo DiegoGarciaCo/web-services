@@ -1,4 +1,5 @@
 import Button from "@/components/Button";
+import ProjectCards from "@/components/ProjectCards";
 
 export default function Home() {
   return (
@@ -37,7 +38,9 @@ export default function Home() {
         </div>
       </section>
       <main>
-        <section className="min-w-full min-h-screen border-l-indigo-950"></section>
+        <section className="min-w-full min-h-screen border-l-indigo-950">
+          <ProjectCards />
+        </section>
       </main>
     </>
   );
