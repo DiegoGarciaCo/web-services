@@ -30,7 +30,7 @@ export default function Home() {
             />
             <Button
               buttonSize="btn--medium"
-              buttonStyle="btn--outline"
+              buttonStyle="btn--nav"
               type="button"
               text="Contact"
               onClick

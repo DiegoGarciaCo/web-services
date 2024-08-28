@@ -7,7 +7,7 @@ export default function Button({
   onClick,
   text,
 }: buttonProps) {
-  const STYLES: string[] = ["btn--primary", "btn--outline"];
+  const STYLES: string[] = ["btn--primary", "btn--outline", "btn--nav"];
   const SIZE: string[] = ["btn--small", "btn--medium", "btn--large"];
 
   const checkButtonStyle: string = STYLES.includes(buttonStyle)
@@ -19,7 +19,7 @@ export default function Button({
 
   return (
     <button
-      className={`btn ${checkButtonStyle} ${buttonSize}`}
+      className={`btn ${checkButtonStyle} ${checkButtonSize}`}
       type={type}
       onClick={onClick}
     >
