@@ -1,9 +1,11 @@
+import { ReactNode } from "react";
+
 export type buttonProps = {
   buttonStyle: string;
   buttonSize: string;
   type: "submit" | "button";
   onClick: any;
-  text: string;
+  text: ReactNode;
 };
 
 export type navLinks = {

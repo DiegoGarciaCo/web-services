@@ -2,6 +2,7 @@ import Button from "@/components/Button";
 import ProjectCards from "@/components/ProjectCards";
 import "@fortawesome/fontawesome-free/css/all.css";
 import ContactForm from "@/components/ContactForm";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -26,14 +27,14 @@ export default function Home() {
               buttonSize="btn--medium"
               buttonStyle="btn--primary"
               type="button"
-              text="Get Started"
+              text={<Link href="/contact">Get Started</Link>}
               onClick
             />
             <Button
               buttonSize="btn--medium"
               buttonStyle="btn--nav"
               type="button"
-              text="Contact"
+              text={<Link href="/about">Learn More</Link>}
               onClick
             />
           </div>
@@ -51,14 +52,14 @@ export default function Home() {
               buttonSize="btn--medium"
               buttonStyle="btn--primary"
               type="button"
-              text="View More"
+              text={<Link href="/portfolio">View More</Link>}
               onClick
             />
             <Button
               buttonSize="btn--medium"
               buttonStyle="btn--outline"
               type="button"
-              text="Contact"
+              text={<Link href="/contact">Contact</Link>}
               onClick
             />
           </div>
