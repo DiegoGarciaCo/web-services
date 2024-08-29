@@ -1,10 +1,14 @@
-export default function ContactForm({ action }: { action: string }) {
+"use client";
+import { captureLead } from "@/lib/actions";
+import Button from "./Button";
+
+export default function ContactForm() {
   return (
     <div className="flex flex-col items-center justify-center w-full h-full">
       <h2 className="text-3xl font-bold text-center pb-5">Contact</h2>
       <form
         className="flex flex-col items-center justify-center w-full"
-        action={action}
+        action={captureLead}
       >
         <label htmlFor="name">Name</label>
         <input
@@ -33,12 +37,13 @@ export default function ContactForm({ action }: { action: string }) {
           id="message"
           className="w-1/2 p-2 m-2 border border-gray-400 rounded"
         />
-        <button
+        <Button
+          buttonStyle="btn--primary"
+          buttonSize="btn--medium"
+          text="Submit"
           type="submit"
-          className="w-1/2 p-2 m-2 border border-gray-400 rounded bg-blue-500 text-white"
-        >
-          Submit
-        </button>
+          onClick
+        />
       </form>
     </div>
   );

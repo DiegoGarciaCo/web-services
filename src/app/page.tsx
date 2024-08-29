@@ -1,6 +1,7 @@
 import Button from "@/components/Button";
 import ProjectCards from "@/components/ProjectCards";
 import "@fortawesome/fontawesome-free/css/all.css";
+import ContactForm from "@/components/ContactForm";
 
 export default function Home() {
   return (
@@ -61,6 +62,9 @@ export default function Home() {
               onClick
             />
           </div>
+        </section>
+        <section className="flex justify-center items-center min-h-screen w-full">
+          <ContactForm />
         </section>
       </main>
     </div>
