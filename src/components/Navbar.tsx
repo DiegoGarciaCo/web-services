@@ -7,12 +7,14 @@ export default function Navbar() {
   // State to check if the navbar is active
   const [isActive, setIsActive] = useState(false);
 
+  // useEffect to handle scroll event on client side
   useEffect(() => {
     if (typeof window !== "undefined") {
       const handleScroll = () => {
         setIsActive(window.scrollY > 100);
       };
 
+      // Event listener to check if the window is scrolled
       window.addEventListener("scroll", handleScroll);
       return () => {
         window.removeEventListener("scroll", handleScroll);
