@@ -27,6 +27,7 @@ model Contact {
   name      String
   email     String   @unique
   phone     String   @unique
+  message   String
   createdAt DateTime @default(now())
 }
 
