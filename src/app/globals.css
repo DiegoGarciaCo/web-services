@@ -68,8 +68,104 @@
   }
 }
 
-/* custon btn styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.active {
+  background-color: #0d144f;
+}
+
+.activeLink {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* custom btn styles */
+.btn--nav {
+  color: #fff;
+  border: solid 2px #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
 .btn--primary {
   color: #fff;
   background-color: #0d144f;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.btn--outline {
+  border: solid 2px #0d144f;
+  background-color: transparent;
+  color: #0d144f;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.btn--outline:hover {
+  background-color: #0d144f;
+  color: #fff;
+}
+
+.btn--nav:hover {
+  background-color: #fff;
+  color: #0d144f;
+}
+
+.btn--primary:hover {
+  background-color: #fff;
+  color: #0d144f;
+}
+
+/* Navlinks styles */
+.links {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem;
+  font-weight: 600;
+}
+
+.links:hover {
+  color: #0d144f;
+  transition: all 0.3s;
+}
+
+/* social media Icon Styles */
+.social {
+  padding: 0.5rem;
+  cursor: pointer;
+}
+.social.facebook {
+  color: #1877f2;
+}
+.social.twitter {
+  color: #1da1f2;
+}
+.social.instagram {
+  color: #c13584;
+}
+
+.social:hover {
+  color: #0d144f;
+  transition: all 0.3s;
+}
+
+/* Footer styles */
+footer {
+  background-color: #0a0612;
 }

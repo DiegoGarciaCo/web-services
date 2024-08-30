@@ -27,16 +27,16 @@ export function AccordionVariant() {
           <div className="flex items-center">
             <ChevronRight className="h-4 w-4 text-zinc-950 transition-transform duration-200 group-data-[expanded]:rotate-90 dark:text-zinc-50" />
             <div className="ml-2 text-zinc-950 dark:text-zinc-50">
-              How do I start with Motion-Primitives?
+              How do I start?
             </div>
           </div>
         </AccordionTrigger>
         <AccordionContent className="origin-left">
           <p className="pl-6 pr-2 text-zinc-500 dark:text-zinc-400">
-            Kick off your experience by setting up Motion-Primitives. This
-            section covers the basics of installation and how to add animations
-            to your projects. You’ll get familiar with the initial setup and the
-            core features quickly.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut,
+            recusandae. Tempora commodi placeat explicabo asperiores veritatis.
+            Rem nobis alias quas repellat possimus maxime neque laboriosam non
+            animi laborum, provident officia?
           </p>
         </AccordionContent>
       </AccordionItem>
@@ -45,15 +45,16 @@ export function AccordionVariant() {
           <div className="flex items-center">
             <ChevronRight className="h-4 w-4 text-zinc-950 transition-transform duration-200 group-data-[expanded]:rotate-90 dark:text-zinc-50" />
             <div className="ml-2 text-zinc-950 dark:text-zinc-50">
-              What are the key animation properties?
+              What are the requirements?
             </div>
           </div>
         </AccordionTrigger>
         <AccordionContent className="origin-left">
           <p className="pl-6 pr-2 text-zinc-500 dark:text-zinc-400">
-            Discover a variety of properties to customize your animations. Learn
-            to adjust timing, easing, and delays for smoother effects. This
-            guide will help you tailor these settings to your app’s needs.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, enim
+            nostrum, sed repellendus explicabo quod voluptatibus rem fugiat
+            ipsum mollitia autem tempora? Aperiam ut ad ab natus officiis
+            voluptate perferendis?.
           </p>
         </AccordionContent>
       </AccordionItem>
@@ -62,16 +63,16 @@ export function AccordionVariant() {
           <div className="flex items-center">
             <ChevronRight className="h-4 w-4 text-zinc-950 transition-transform duration-200 group-data-[expanded]:rotate-90 dark:text-zinc-50" />
             <div className="ml-2 text-zinc-950 dark:text-zinc-50">
-              How do I use advanced features?
+              How do I start?
             </div>
           </div>
         </AccordionTrigger>
         <AccordionContent className="origin-left">
           <p className="pl-6 pr-2 text-zinc-500 dark:text-zinc-400">
-            Advance your skills by using more complex functions of
-            Motion-Primitives. Explore how to link animations together, create
-            intricate sequences, and interact with motion sensors for dynamic
-            effects.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem et
+            blanditiis, corporis facere in rerum ullam. A perspiciatis corrupti
+            officia atque, adipisci aut exercitationem provident velit fugiat
+            corporis architecto maxime..
           </p>
         </AccordionContent>
       </AccordionItem>
@@ -80,16 +81,16 @@ export function AccordionVariant() {
           <div className="flex items-center">
             <ChevronRight className="h-4 w-4 text-zinc-950 transition-transform duration-200 group-data-[expanded]:rotate-90 dark:text-zinc-50" />
             <div className="ml-2 text-zinc-950 dark:text-zinc-50">
-              How do I engage with the community?
+              How do I access the leads?
             </div>
           </div>
         </AccordionTrigger>
         <AccordionContent className="origin-left">
           <p className="pl-6 pr-2 text-zinc-500 dark:text-zinc-400">
-            Connect with the Motion-Primitives community for support and
-            collaboration. Learn how to contribute, share knowledge, and access
-            helpful resources. Stay updated on new updates and collective
-            insights.
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eius
+            veniam assumenda architecto quas excepturi doloremque in? Rerum
+            sapiente est, commodi natus dolorum debitis libero assumenda odit
+            illum iusto iste sequi!
           </p>
         </AccordionContent>
       </AccordionItem>
