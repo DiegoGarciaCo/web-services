@@ -1,6 +1,7 @@
 "use server";
 import { z } from "zod";
 import prisma from "./db";
+import { ErrorObject } from "./definitions";
 
 const contactSchema = z.object({
   name: z.string().min(2).max(255),
@@ -9,7 +10,10 @@ const contactSchema = z.object({
   message: z.string().min(1).max(1000),
 });
 
-export async function captureLead(data: any) {
+export async function captureLead(
+  prevState: ErrorObject,
+  data: FormData
+): Promise<ErrorObject | any> {
   try {
     // Validate the data
     const validatedData = contactSchema.safeParse(
@@ -24,12 +28,9 @@ export async function captureLead(data: any) {
     const formData = validatedData.data;
 
     // Save the data to the database
-    const newContact = await prisma.contact.create({
+    await prisma.contact.create({
       data: formData,
     });
-
-    // Return the new contact
-    return newContact;
   } catch (error) {
     console.error(error);
     return error;

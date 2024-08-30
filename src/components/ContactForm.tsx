@@ -1,15 +1,28 @@
 "use client";
 import { captureLead } from "@/lib/actions";
 import Button from "./Button";
-import { useFormState } from "react-dom";
+import { useFormState, useFormStatus } from "react-dom";
+
+function SubmitButton() {
+  const { pending } = useFormStatus();
+  return (
+    <Button
+      buttonStyle="btn--primary"
+      buttonSize="btn--medium"
+      text={pending ? "Submitting..." : "Submit"}
+      type="submit"
+    />
+  );
+}
 
 export default function ContactForm() {
+  const [error, action] = useFormState(captureLead, {});
   return (
     <div className="flex flex-col items-center justify-center w-full h-full">
       <h2 className="text-3xl font-bold text-center pb-5">Contact</h2>
       <form
         className="flex flex-col items-center justify-center w-full"
-        action={captureLead}
+        action={action}
       >
         <label htmlFor="name">Name</label>
         <input
@@ -18,6 +31,7 @@ export default function ContactForm() {
           id="name"
           className="w-1/2 p-2 m-2 border border-gray-400 rounded"
         />
+        {error?.name && <p className="text-red-500">{error.name}</p>}
         <label htmlFor="phone">Phone</label>
         <input
           type="tel"
@@ -25,6 +39,7 @@ export default function ContactForm() {
           id="phone"
           className="w-1/2 p-2 m-2 border border-gray-400 rounded"
         />
+        {error?.phone && <p className="text-red-500">{error.phone}</p>}
         <label htmlFor="email">Email</label>
         <input
           type="email"
@@ -32,21 +47,15 @@ export default function ContactForm() {
           id="email"
           className="w-1/2 p-2 m-2 border border-gray-400 rounded"
         />
+        {error?.email && <p className="text-red-500">{error.email}</p>}
         <label htmlFor="message">Message</label>
         <textarea
           name="message"
           id="message"
           className="w-1/2 p-2 m-2 border border-gray-400 rounded"
         />
-        <Button
-          buttonStyle="btn--primary"
-          buttonSize="btn--medium"
-          text="Submit"
-          type="submit"
-          onClick={() => {
-            console.log("Form submitted");
-          }}
-        />
+        {error?.message && <p className="text-red-500">{error.message}</p>}
+        <SubmitButton />
       </form>
     </div>
   );

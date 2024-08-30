@@ -12,3 +12,10 @@ export type navLinks = {
   path: string;
   name: string;
 };
+
+export interface ErrorObject {
+  name?: string;
+  phone?: string;
+  email?: string;
+  message?: string;
+}
