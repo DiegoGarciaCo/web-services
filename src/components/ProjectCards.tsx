@@ -35,13 +35,20 @@ export default function ProjectCards() {
       image: "/Image_five.jpg",
       alt: "Project 5",
     },
+    {
+      title: "CRM",
+      description:
+        "lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      image: "/Image_six.jpg",
+      alt: "Project 6",
+    },
   ];
   return (
     <div className="grid grid-cols-1 md:grid-cols-3 gap-4 my-5 p-5">
       {projectCards.map((project, index) => (
         <div
           key={index}
-          className="bg-white shadow-lg rounded-lg overflow-hidden"
+          className="bg-white shadow-lg rounded-lg overflow-hidden cursor-pointer hover:shadow-2xl"
         >
           <img
             className="w-full h-56 object-cover object-center"
