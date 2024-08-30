@@ -28,14 +28,12 @@ export default function Home() {
               buttonStyle="btn--primary"
               type="button"
               text={<Link href="/contact">Get Started</Link>}
-              onClick
             />
             <Button
               buttonSize="btn--medium"
               buttonStyle="btn--nav"
               type="button"
               text={<Link href="/about">Learn More</Link>}
-              onClick
             />
           </div>
         </div>
@@ -53,14 +51,12 @@ export default function Home() {
               buttonStyle="btn--primary"
               type="button"
               text={<Link href="/portfolio">View More</Link>}
-              onClick
             />
             <Button
               buttonSize="btn--medium"
               buttonStyle="btn--outline"
               type="button"
               text={<Link href="/contact">Contact</Link>}
-              onClick
             />
           </div>
         </section>

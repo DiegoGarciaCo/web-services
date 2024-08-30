@@ -1,6 +1,7 @@
 "use client";
 import { captureLead } from "@/lib/actions";
 import Button from "./Button";
+import { useFormState } from "react-dom";
 
 export default function ContactForm() {
   return (
@@ -42,7 +43,9 @@ export default function ContactForm() {
           buttonSize="btn--medium"
           text="Submit"
           type="submit"
-          onClick
+          onClick={() => {
+            console.log("Form submitted");
+          }}
         />
       </form>
     </div>

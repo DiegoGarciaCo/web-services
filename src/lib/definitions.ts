@@ -4,7 +4,7 @@ export type buttonProps = {
   buttonStyle: string;
   buttonSize: string;
   type: "submit" | "button";
-  onClick: any;
+  onClick?: any;
   text: ReactNode;
 };
 
