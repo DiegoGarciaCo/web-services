@@ -61,11 +61,23 @@ export default function Home() {
             />
           </div>
         </section>
-        <section>
-          <AccordionVariant />
+        <section className="max-w-full py-8">
+          <h2 className="text-center text-4xl capitalize">
+            Frequently asked questions
+          </h2>
+          <p className="text-center text-lg p-5 ">
+            Here are some answers to some of the questions
+            <br />
+            that are most frequently asked
+          </p>
+          <div className="p-4">
+            <AccordionVariant />
+          </div>
         </section>
         <section className="flex justify-center items-center min-h-screen w-full">
-          <ContactForm />
+          <div className="w-3/4">
+            <ContactForm />
+          </div>
         </section>
       </main>
     </div>

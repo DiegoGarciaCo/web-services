@@ -22,11 +22,14 @@ export function AccordionVariant() {
         },
       }}
     >
-      <AccordionItem value="getting-started" className="py-2">
+      <AccordionItem
+        value="getting-started"
+        className="py-2 border-zinc-300 border-2"
+      >
         <AccordionTrigger className="w-full py-0.5 text-left text-zinc-950 dark:text-zinc-50">
           <div className="flex items-center">
             <ChevronRight className="h-4 w-4 text-zinc-950 transition-transform duration-200 group-data-[expanded]:rotate-90 dark:text-zinc-50" />
-            <div className="ml-2 text-zinc-950 dark:text-zinc-50">
+            <div className="ml-2 text-zinc-950 dark:text-zinc-50 text-2xl">
               How do I start?
             </div>
           </div>
@@ -40,11 +43,14 @@ export function AccordionVariant() {
           </p>
         </AccordionContent>
       </AccordionItem>
-      <AccordionItem value="animation-properties" className="py-2">
+      <AccordionItem
+        value="animation-properties"
+        className="py-2 border-zinc-300 border-2 mb-1 mt-2"
+      >
         <AccordionTrigger className="w-full py-0.5 text-left text-zinc-950 dark:text-zinc-50">
           <div className="flex items-center">
             <ChevronRight className="h-4 w-4 text-zinc-950 transition-transform duration-200 group-data-[expanded]:rotate-90 dark:text-zinc-50" />
-            <div className="ml-2 text-zinc-950 dark:text-zinc-50">
+            <div className="ml-2 text-zinc-950 dark:text-zinc-50 text-2xl">
               What are the requirements?
             </div>
           </div>
@@ -58,12 +64,15 @@ export function AccordionVariant() {
           </p>
         </AccordionContent>
       </AccordionItem>
-      <AccordionItem value="advanced-features" className="py-2">
+      <AccordionItem
+        value="advanced-features"
+        className="py-2 border-zinc-300 border-2 mb-2 mt-1"
+      >
         <AccordionTrigger className="w-full py-0.5 text-left text-zinc-950 dark:text-zinc-50">
           <div className="flex items-center">
             <ChevronRight className="h-4 w-4 text-zinc-950 transition-transform duration-200 group-data-[expanded]:rotate-90 dark:text-zinc-50" />
-            <div className="ml-2 text-zinc-950 dark:text-zinc-50">
-              How do I start?
+            <div className="ml-2 text-zinc-950 dark:text-zinc-50 text-2xl">
+              Another Random Question Goes Here?
             </div>
           </div>
         </AccordionTrigger>
@@ -76,12 +85,57 @@ export function AccordionVariant() {
           </p>
         </AccordionContent>
       </AccordionItem>
-      <AccordionItem value="community-support" className="py-2">
+      <AccordionItem
+        value="community-support"
+        className="py-2 border-zinc-300 border-2 mb-2"
+      >
         <AccordionTrigger className="w-full py-0.5 text-left text-zinc-950 dark:text-zinc-50">
           <div className="flex items-center">
             <ChevronRight className="h-4 w-4 text-zinc-950 transition-transform duration-200 group-data-[expanded]:rotate-90 dark:text-zinc-50" />
-            <div className="ml-2 text-zinc-950 dark:text-zinc-50">
-              How do I access the leads?
+            <div className="ml-2 text-zinc-950 dark:text-zinc-50 text-2xl">
+              Another Random Question Goes Here?
+            </div>
+          </div>
+        </AccordionTrigger>
+        <AccordionContent className="origin-left">
+          <p className="pl-6 pr-2 text-zinc-500 dark:text-zinc-400">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eius
+            veniam assumenda architecto quas excepturi doloremque in? Rerum
+            sapiente est, commodi natus dolorum debitis libero assumenda odit
+            illum iusto iste sequi!
+          </p>
+        </AccordionContent>
+      </AccordionItem>
+      <AccordionItem
+        value="random-question"
+        className="py-2 border-zinc-300 border-2 mb-2"
+      >
+        <AccordionTrigger className="w-full py-0.5 text-left text-zinc-950 dark:text-zinc-50">
+          <div className="flex items-center">
+            <ChevronRight className="h-4 w-4 text-zinc-950 transition-transform duration-200 group-data-[expanded]:rotate-90 dark:text-zinc-50" />
+            <div className="ml-2 text-zinc-950 dark:text-zinc-50 text-2xl">
+              Another Random Question Goes Here?
+            </div>
+          </div>
+        </AccordionTrigger>
+        <AccordionContent className="origin-left">
+          <p className="pl-6 pr-2 text-zinc-500 dark:text-zinc-400">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eius
+            veniam assumenda architecto quas excepturi doloremque in? Rerum
+            sapiente est, commodi natus dolorum debitis libero assumenda odit
+            illum iusto iste sequi!
+          </p>
+        </AccordionContent>
+      </AccordionItem>
+      <AccordionItem
+        value="random-value"
+        className="py-2 border-zinc-300 border-2"
+      >
+        <AccordionTrigger className="w-full py-0.5 text-left text-zinc-950 dark:text-zinc-50">
+          <div className="flex items-center">
+            <ChevronRight className="h-4 w-4 text-zinc-950 transition-transform duration-200 group-data-[expanded]:rotate-90 dark:text-zinc-50" />
+            <div className="ml-2 text-zinc-950 dark:text-zinc-50 text-2xl">
+              Another Random Question Goes Here?
             </div>
           </div>
         </AccordionTrigger>

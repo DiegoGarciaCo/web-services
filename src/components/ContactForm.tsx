@@ -45,14 +45,14 @@ export default function ContactForm() {
           type="email"
           name="email"
           id="email"
-          className="w-1/2 p-2 m-2 border border-gray-400 rounded"
+          className="w-1/2 p-2 m-2 border border-gray-400 rounded hove"
         />
         {error?.email && <p className="text-red-500">{error.email}</p>}
         <label htmlFor="message">Message</label>
         <textarea
           name="message"
           id="message"
-          className="w-1/2 p-2 m-2 border border-gray-400 rounded"
+          className="w-1/2 h-40 p-2 m-2 border border-gray-400 rounded"
         />
         {error?.message && <p className="text-red-500">{error.message}</p>}
         <SubmitButton />

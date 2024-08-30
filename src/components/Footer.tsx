@@ -3,7 +3,7 @@ import "@fortawesome/fontawesome-free/css/all.css";
 
 export default function Footer() {
   return (
-    <footer className="h-[50vh] max-w-full text-white relative overflow-x-hidden">
+    <footer className="h-[50vh] max-w-full text-white relative overflow-x-hidden mt-4">
       <div className="flex justify-evenly items-center p-5">
         <h1 className="text-4xl cursor-pointer">LOGO</h1>
         <NavLinks />

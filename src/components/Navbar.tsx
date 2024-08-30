@@ -27,7 +27,7 @@ export default function Navbar() {
   }, []);
   return (
     <nav
-      className={`flex content-center justify-center sticky top-0 w-full h-20 ${
+      className={`flex content-center justify-center sticky top-0 z-20 w-full h-20 ${
         isActive ? "active" : "bg-transparent"
       } items-center px-5`}
     >
