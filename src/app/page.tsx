@@ -3,6 +3,7 @@ import ProjectCards from "@/components/ProjectCards";
 import "@fortawesome/fontawesome-free/css/all.css";
 import ContactForm from "@/components/ContactForm";
 import Link from "next/link";
+import { AccordionVariant } from "@/components/Accordion";
 
 export default function Home() {
   return (
@@ -59,6 +60,9 @@ export default function Home() {
               text={<Link href="/contact">Contact</Link>}
             />
           </div>
+        </section>
+        <section>
+          <AccordionVariant />
         </section>
         <section className="flex justify-center items-center min-h-screen w-full">
           <ContactForm />
