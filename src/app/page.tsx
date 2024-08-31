@@ -4,10 +4,12 @@ import "@fortawesome/fontawesome-free/css/all.css";
 import ContactForm from "@/components/ContactForm";
 import Link from "next/link";
 import { AccordionVariant } from "@/components/Accordion";
+import { Testimonials } from "@/components/Testimonials";
 
 export default function Home() {
   return (
     <div className="overflow-x-hidden">
+      {/* Hero Section */}
       <section className="flex min-h-screen flex-col items-center justify-between p-24 overflow-x-hidden max-w-full">
         <video
           className="absolute top-0 left-0 w-full h-full object-cover -z-10"
@@ -40,6 +42,7 @@ export default function Home() {
         </div>
       </section>
       <main>
+        {/* Project Cards Section */}
         <section className="max-w-full min-h-screen overflow-x-hidden">
           <h2 className="text-3xl font-bold text-center px-5 pb-5">Projects</h2>
           <p className="text-center pb-5 text-lg">
@@ -61,8 +64,15 @@ export default function Home() {
             />
           </div>
         </section>
-        <section className="max-w-full py-8">
-          <h2 className="text-center text-4xl capitalize">
+        {/* Testimonial Section */}
+        <section className="flex max-w-full py-12">
+          <div className="w-full flex items-center justify-center">
+            <Testimonials />
+          </div>
+        </section>
+        {/* FAQ Section */}
+        <section className="max-w-full py-12">
+          <h2 className="text-center text-3xl font-bold capitalize">
             Frequently asked questions
           </h2>
           <p className="text-center text-lg p-5 ">
@@ -74,6 +84,7 @@ export default function Home() {
             <AccordionVariant />
           </div>
         </section>
+        {/* Contact Form Section */}
         <section className="flex justify-center items-center min-h-screen w-full">
           <div className="w-3/4">
             <ContactForm />
