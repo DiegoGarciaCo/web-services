@@ -54,7 +54,7 @@ export default function ContactForm() {
           id="message"
           className="w-1/2 h-40 p-2 m-2 border border-gray-400 rounded"
         />
-        {error?.message && <p className="text-red-500">{error.message}</p>}
+        {error?.message && <p className="text-red-500 p-2">{error.message}</p>}
         <SubmitButton />
       </form>
     </div>
