@@ -86,9 +86,7 @@ export default function Home() {
         </section>
         {/* Contact Form Section */}
         <section className="flex justify-center items-center min-h-screen w-full">
-          <div className="w-3/4">
-            <ContactForm />
-          </div>
+          <ContactForm />
         </section>
       </main>
     </div>
