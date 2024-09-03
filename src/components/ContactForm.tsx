@@ -2,7 +2,6 @@
 import { captureLead } from "@/lib/actions";
 import Button from "./Button";
 import { useFormState, useFormStatus } from "react-dom";
-import { error } from "console";
 
 function SubmitButton() {
   const { pending } = useFormStatus();
