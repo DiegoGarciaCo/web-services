@@ -19,6 +19,10 @@ const contactSchema = z.object({
     .max(1000, { message: "Message is too long" }),
 });
 
+const newsletterSchema = z.object({
+  email: z.string().email(),
+});
+
 export async function captureLead(
   prevState: ErrorObject,
   data: FormData
@@ -41,6 +45,34 @@ export async function captureLead(
       data: formData,
     });
     return { success: true, message: "Form submitted successfully" };
+  } catch (error) {
+    console.error(error);
+    return { success: false, message: "An error occurred" };
+  }
+}
+
+export async function subscribeToNewsletter(
+  prevState: ErrorObject,
+  data: FormData
+): Promise<ErrorObject | any> {
+  try {
+    // Validate the data
+    const validatedData = newsletterSchema.safeParse(
+      Object.fromEntries(data.entries())
+    );
+    // if data fails validation, return the errors
+    if (validatedData.success === false) {
+      return validatedData.error.formErrors.fieldErrors;
+    }
+
+    // Extract the data
+    const formData = validatedData.data;
+
+    // Save the data to the database
+    await prisma.newsletter.create({
+      data: formData,
+    });
+    return { success: true, message: "Subscribed!" };
   } catch (error) {
     console.error(error);
     return { success: false, message: "An error occurred" };

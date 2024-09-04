@@ -11,7 +11,7 @@ export default function Home() {
   return (
     <div className="overflow-x-hidden">
       {/* Hero Section */}
-      <section className="flex h-[87vh] flex-col items-center justify-between p-24 overflow-x-hidden max-w-full border-2">
+      <section className="flex h-[87vh] flex-col items-center justify-between p-24 overflow-x-hidden max-w-full">
         <video
           className="absolute top-0 left-0 w-full h-full object-cover -z-10"
           autoPlay
