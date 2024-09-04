@@ -5,12 +5,13 @@ import ContactForm from "@/components/ContactForm";
 import Link from "next/link";
 import { AccordionVariant } from "@/components/Accordion";
 import { Testimonials } from "@/components/Testimonials";
+import Newsletter from "@/components/Newsletter";
 
 export default function Home() {
   return (
     <div className="overflow-x-hidden">
       {/* Hero Section */}
-      <section className="flex min-h-screen flex-col items-center justify-between p-24 overflow-x-hidden max-w-full">
+      <section className="flex h-[87vh] flex-col items-center justify-between p-24 overflow-x-hidden max-w-full border-2">
         <video
           className="absolute top-0 left-0 w-full h-full object-cover -z-10"
           autoPlay
@@ -42,6 +43,9 @@ export default function Home() {
         </div>
       </section>
       <main>
+        <section className="p-8 w-full h-[60vh]">
+          <Newsletter />
+        </section>
         {/* Project Cards Section */}
         <section className="max-w-full min-h-screen overflow-x-hidden">
           <h2 className="text-3xl font-bold text-center px-5 pb-5">Projects</h2>

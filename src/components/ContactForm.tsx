@@ -3,7 +3,7 @@ import { captureLead } from "@/lib/actions";
 import Button from "./Button";
 import { useFormState, useFormStatus } from "react-dom";
 
-function SubmitButton() {
+export function SubmitButton() {
   const { pending } = useFormStatus();
   return (
     <Button
