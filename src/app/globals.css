@@ -170,4 +170,8 @@ footer {
   background-color: #0a0612;
 }
 
-/* form styles */
+/* login form styles */
+.dark {
+  background-color: #0a0612;
+  color: #fff;
+}
