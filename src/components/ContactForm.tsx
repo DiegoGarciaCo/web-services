@@ -2,6 +2,8 @@
 import { captureLead } from "@/lib/actions";
 import Button from "./Button";
 import { useFormState, useFormStatus } from "react-dom";
+import { useEffect, useRef, useState } from "react";
+import { set } from "zod";
 
 export function SubmitButton() {
   const { pending } = useFormStatus();
@@ -16,11 +18,43 @@ export function SubmitButton() {
 }
 
 export default function ContactForm() {
-  const [error, action] = useFormState(captureLead, {});
+  const [state, action] = useFormState(captureLead, {});
+  const formRef = useRef<any>(null);
+  const [formMessages, setFormMessages] = useState<any>();
+
+  useEffect(() => {
+    if (state?.success) {
+      formRef.current?.reset();
+      setFormMessages({
+        output: state?.output,
+      });
+      const timer = setTimeout(() => {
+        setFormMessages({});
+      }, 5000);
+      return () => clearTimeout(timer);
+    } else if (!state?.success) {
+      setFormMessages({
+        name: state?.name,
+        phone: state?.phone,
+        email: state?.email,
+        message: state?.message,
+        output: state?.output,
+      });
+      const timer = setTimeout(() => {
+        setFormMessages({});
+      }, 5000);
+      return () => clearTimeout(timer);
+    }
+  }, [state]);
+
   return (
     <div className="flex flex-col items-center justify-center w-full h-full">
       <h2 className="text-3xl font-bold text-center pb-5">Contact</h2>
-      <form className="flex flex-col justify-center w-1/3" action={action}>
+      <form
+        className="flex flex-col justify-center w-1/3 pb-5"
+        action={action}
+        ref={formRef}
+      >
         <label htmlFor="name" className="font-bold">
           Name:
         </label>
@@ -29,8 +63,11 @@ export default function ContactForm() {
           name="name"
           id="name"
           className="w-full p-2 m-2 border border-gray-400 rounded"
+          placeholder="Enter your name"
         />
-        {error?.name && <p className="text-red-500">{error.name}</p>}
+        {formMessages?.name && (
+          <p className="text-red-500">{formMessages.name}</p>
+        )}
         <label htmlFor="phone" className="font-bold">
           Phone:
         </label>
@@ -39,8 +76,11 @@ export default function ContactForm() {
           name="phone"
           id="phone"
           className="w-full p-2 m-2 border border-gray-400 rounded"
+          placeholder="Enter your phone number"
         />
-        {error?.phone && <p className="text-red-500">{error.phone}</p>}
+        {formMessages?.phone && (
+          <p className="text-red-500">{formMessages.phone}</p>
+        )}
         <label htmlFor="email" className="font-bold">
           Email:
         </label>
@@ -49,8 +89,11 @@ export default function ContactForm() {
           name="email"
           id="email"
           className="w-full p-2 m-2 border border-gray-400 rounded hove"
+          placeholder="Enter your email"
         />
-        {error?.email && <p className="text-red-500">{error.email}</p>}
+        {formMessages?.email && (
+          <p className="text-red-500">{formMessages.email}</p>
+        )}
         <label htmlFor="message" className="font-bold">
           Message:
         </label>
@@ -58,8 +101,19 @@ export default function ContactForm() {
           name="message"
           id="message"
           className="w-full h-40 p-2 m-2 border border-gray-400 rounded"
+          placeholder="Enter your message"
         />
-        {error?.message && <p className="text-red-500 p-2">{error.message}</p>}
+        {formMessages?.message && (
+          <p className="text-red-500">{formMessages.message}</p>
+        )}
+
+        {state?.success ? (
+          <p className="text-green-500 p-2 text-center">
+            {formMessages.output}
+          </p>
+        ) : (
+          <p className="text-red-500 p-2 text-center">{state.output}</p>
+        )}
         <div className="flex items-center w-full justify-center">
           <SubmitButton />
         </div>

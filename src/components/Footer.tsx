@@ -7,7 +7,7 @@ export default function Footer() {
     <footer className="h-[50vh] max-w-full text-white relative overflow-x-hidden ">
       <div className="flex justify-evenly items-center p-5">
         <h1 className="text-4xl cursor-pointer">
-          <Link href={"/admin/login"}>LOGO</Link>
+          <Link href={"/admin"}>LOGO</Link>
         </h1>
         <NavLinks />
         <div className="flex items-center">

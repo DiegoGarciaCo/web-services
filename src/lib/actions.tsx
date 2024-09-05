@@ -44,10 +44,10 @@ export async function captureLead(
     await prisma.contact.create({
       data: formData,
     });
-    return { success: true, message: "Form submitted successfully" };
+    return { success: true, output: "Form submitted successfully!" };
   } catch (error) {
     console.error(error);
-    return { success: false, message: "An error occurred" };
+    return { success: false, output: "An error occurred" };
   }
 }
 
@@ -72,9 +72,9 @@ export async function subscribeToNewsletter(
     await prisma.newsletter.create({
       data: formData,
     });
-    return { success: true, message: "Subscribed!" };
+    return { success: true, output: "Subscribed!" };
   } catch (error) {
     console.error(error);
-    return { success: false, message: "An error occurred" };
+    return { success: false, output: "An error occurred" };
   }
 }
