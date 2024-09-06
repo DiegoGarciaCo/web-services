@@ -66,7 +66,7 @@ export default function ContactForm() {
           placeholder="Enter your name"
         />
         {formMessages?.name && (
-          <p className="text-red-500">{formMessages.name}</p>
+          <p className="text-red-800">{formMessages.name}</p>
         )}
         <label htmlFor="phone" className="font-bold">
           Phone:
@@ -79,7 +79,7 @@ export default function ContactForm() {
           placeholder="Enter your phone number"
         />
         {formMessages?.phone && (
-          <p className="text-red-500">{formMessages.phone}</p>
+          <p className="text-red-800">{formMessages.phone}</p>
         )}
         <label htmlFor="email" className="font-bold">
           Email:
@@ -92,7 +92,7 @@ export default function ContactForm() {
           placeholder="Enter your email"
         />
         {formMessages?.email && (
-          <p className="text-red-500">{formMessages.email}</p>
+          <p className="text-red-800">{formMessages.email}</p>
         )}
         <label htmlFor="message" className="font-bold">
           Message:
@@ -104,15 +104,15 @@ export default function ContactForm() {
           placeholder="Enter your message"
         />
         {formMessages?.message && (
-          <p className="text-red-500">{formMessages.message}</p>
+          <p className="text-red-800">{formMessages.message}</p>
         )}
 
         {state?.success ? (
-          <p className="text-green-500 p-2 text-center">
+          <p className="text-green-800 p-2 text-center">
             {formMessages.output}
           </p>
         ) : (
-          <p className="text-red-500 p-2 text-center">{state.output}</p>
+          <p className="text-red-800 p-2 text-center">{state.output}</p>
         )}
         <div className="flex items-center w-full justify-center">
           <SubmitButton />

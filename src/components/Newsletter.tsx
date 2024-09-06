@@ -48,12 +48,12 @@ export default function Newsletter() {
         </div>
       </form>
       {formMessages?.email && (
-        <p className="text-red-500">{formMessages?.email}</p>
+        <p className="text-red-800">{formMessages?.email}</p>
       )}
       {state?.success ? (
-        <p className="text-green-500">{formMessages.output}</p>
+        <p className="text-green-800">{formMessages.output}</p>
       ) : (
-        <p className="text-red-500">{state.output}</p>
+        <p className="text-red-800">{state.output}</p>
       )}
     </div>
   );
