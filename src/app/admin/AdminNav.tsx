@@ -1,18 +1,29 @@
+import { signOut } from "@/auth";
+import Link from "next/link";
+
 export default function AdminNav() {
   return (
     <nav className="flex items-center justify-around dark p-6">
       <h2 className="text-4xl uppercase">Logo</h2>
-      <ul className="flex items-center justify-evenly w-1/3">
+      <ul className="flex items-center gap-4 w-1/3">
         <li>
-          <a href="/admin">Dashboard</a>
+          <Link href="/admin">Dashboard</Link>
         </li>
         <li>
-          <a href="/admin/contact">Contacts</a>
+          <Link href="/admin/contacts">Contacts</Link>
         </li>
         <li>
-          <a href="/admin/newsletter">Newsletters</a>
+          <Link href="/admin/newsletters">Subscriptions</Link>
         </li>
       </ul>
+      <form
+        action={async () => {
+          "use server";
+          await signOut();
+        }}
+      >
+        <button className="btn">Sign Out</button>
+      </form>
     </nav>
   );
 }
