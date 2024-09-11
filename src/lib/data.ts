@@ -115,20 +115,41 @@ export async function getChartData() {
 
 // Fetches all Contacts
 export async function getContacts() {
-  return await prisma.contact.findMany();
+  return await prisma.contact.findMany({
+    where: {
+      delete: false,
+    },
+    orderBy: {
+      createdAt: "desc",
+    },
+  });
 }
 
 // Fetches all Subscriptions
 export async function getSubscriptions() {
-  return await prisma.newsletter.findMany();
-}
-
-// Fetches latest week of Contacts
-export async function getLatestContacts() {
-  return await prisma.contact.findMany({
+  return await prisma.newsletter.findMany({
+    where: {
+      delete: false,
+    },
     orderBy: {
       createdAt: "desc",
     },
-    take: 7,
+  });
+}
+
+// Fetches latest 7 of Contacts
+export async function getLatestContacts() {
+  const oneWeekAgo = new Date();
+  oneWeekAgo.setDate(oneWeekAgo.getDate() - 7);
+  return await prisma.contact.findMany({
+    where: {
+      hide: false,
+      createdAt: {
+        gte: oneWeekAgo,
+      },
+    },
+    orderBy: {
+      createdAt: "desc",
+    },
   });
 }

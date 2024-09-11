@@ -9,6 +9,7 @@ import {
 } from "@/components/ui/table";
 import { getSubscriptions } from "@/lib/data";
 import CheckBox from "./CheckBox";
+import { updateNewsletterTable } from "@/lib/actions";
 
 export default async function AdminSubs() {
   // Fetch all contacts
@@ -29,7 +30,7 @@ export default async function AdminSubs() {
             <TableRow key={id} id={id}>
               <TableCell>{email}</TableCell>
               <TableCell className="text-right">
-                <CheckBox id={id} />
+                <CheckBox id={id} action={updateNewsletterTable} />
               </TableCell>
             </TableRow>
           ))}

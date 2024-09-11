@@ -71,6 +71,8 @@ model Contact {
   name      String
   email     String   @unique
   phone     String   @unique
+  hide      Boolean  @default(false)
+  delete    Boolean  @default(false)
   message   String
   createdAt DateTime @default(now())
 }
@@ -78,5 +80,7 @@ model Contact {
 model Newsletter {
   id        String   @id @default(cuid())
   email     String   @unique
+  hide      Boolean  @default(false)
+  delete    Boolean  @default(false)
   createdAt DateTime @default(now())
 }

@@ -10,6 +10,7 @@ import {
 import { getContacts } from "@/lib/data";
 import CheckBox from "./CheckBox";
 import { formatPhoneNumber } from "@/lib/utils";
+import { updateTable } from "@/lib/actions";
 
 export default async function AdminTable() {
   // Fetch all contacts
@@ -34,7 +35,7 @@ export default async function AdminTable() {
               <TableCell>{formatPhoneNumber(phone)}</TableCell>
               <TableCell>{email}</TableCell>
               <TableCell className="text-right">
-                <CheckBox id={id} />
+                <CheckBox id={id} action={updateTable} />
               </TableCell>
             </TableRow>
           ))}

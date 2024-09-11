@@ -79,12 +79,75 @@ export async function subscribeToNewsletter(
   }
 }
 
-// Function to delete a contact from the database when checkbox is clicked
-export async function deleteContact(formData: FormData) {
+// Function to delete a contact from the table when checkbox is clicked
+export async function updateTable(formData: FormData) {
   const id = formData.get("id") as string;
-  await prisma.contact.delete({
+  await prisma.contact.update({
     where: {
       id: id,
+    },
+    data: {
+      delete: true,
+    },
+  });
+}
+
+// Function to delete a newsletter subscription from the table when checkbox is clicked
+export async function updateNewsletterTable(formData: FormData) {
+  const id = formData.get("id") as string;
+  await prisma.newsletter.update({
+    where: {
+      id: id,
+    },
+    data: {
+      delete: true,
+    },
+  });
+}
+
+// Hide the contact from the table
+export async function hideContact(formData: FormData) {
+  const id = formData.get("id") as string;
+  await prisma.contact.update({
+    where: {
+      id: id,
+    },
+    data: {
+      hide: true,
+    },
+  });
+}
+
+// Deletes all contacts older than 12 months from the database
+export async function deleteOldContacts() {
+  const currentDate = new Date();
+  const twelveMonthsAgo = new Date(
+    currentDate.getFullYear(),
+    currentDate.getMonth() - 12,
+    1
+  );
+  await prisma.contact.deleteMany({
+    where: {
+      createdAt: {
+        lt: twelveMonthsAgo,
+      },
+    },
+  });
+}
+
+// Deletes all newsletter subscriptions older than 12 months from the database
+export async function deleteOldSubscriptions() {
+  const currentDate = new Date();
+  const twelveMonthsAgo = new Date(
+    currentDate.getFullYear(),
+    currentDate.getMonth() - 12,
+    1
+  );
+  await prisma.newsletter.deleteMany({
+    where: {
+      createdAt: {
+        lt: twelveMonthsAgo,
+      },
     },
   });
 }

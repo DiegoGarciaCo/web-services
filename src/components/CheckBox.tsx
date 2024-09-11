@@ -1,16 +1,18 @@
 "use client";
 
-import { deleteContact } from "@/lib/actions";
-
 interface CheckBoxProps {
   id: string;
+  action: any;
 }
 
-const CheckBox: React.FC<CheckBoxProps> = ({ id }) => {
+const CheckBox: React.FC<CheckBoxProps> = ({ id, action }) => {
   return (
-    <form action={deleteContact}>
+    <form action={action}>
       <input type="hidden" name="id" value={id} />
-      <input type="checkbox" onChange={(e) => e.currentTarget.form?.submit()} />
+      <input
+        type="checkbox"
+        onChange={(e) => e.currentTarget.form?.requestSubmit()}
+      />
     </form>
   );
 };

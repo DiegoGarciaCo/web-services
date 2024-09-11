@@ -10,6 +10,7 @@ import {
 import { getLatestContacts } from "@/lib/data";
 import CheckBox from "./CheckBox";
 import { formatPhoneNumber } from "@/lib/utils";
+import { hideContact } from "@/lib/actions";
 
 export default async function DashboardTable() {
   // Fetch the 7 latest contacts
@@ -33,7 +34,7 @@ export default async function DashboardTable() {
             <TableCell>{formatPhoneNumber(phone)}</TableCell>
             <TableCell>{email}</TableCell>
             <TableCell className="text-center">
-              <CheckBox id={id} />
+              <CheckBox id={id} action={hideContact} />
             </TableCell>
           </TableRow>
         ))}
