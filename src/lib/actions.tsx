@@ -78,3 +78,13 @@ export async function subscribeToNewsletter(
     return { success: false, output: "An error occurred" };
   }
 }
+
+// Function to delete a contact from the database when checkbox is clicked
+export async function deleteContact(formData: FormData) {
+  const id = formData.get("id") as string;
+  await prisma.contact.delete({
+    where: {
+      id: id,
+    },
+  });
+}

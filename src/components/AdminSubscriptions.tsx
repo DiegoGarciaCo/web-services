@@ -8,6 +8,7 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { getSubscriptions } from "@/lib/data";
+import CheckBox from "./CheckBox";
 
 export default async function AdminSubs() {
   // Fetch all contacts
@@ -20,15 +21,15 @@ export default async function AdminSubs() {
         <TableHeader>
           <TableRow>
             <TableHead>Email</TableHead>
-            <TableHead className="text-right">Subscribed</TableHead>
+            <TableHead className="text-right">Delete</TableHead>
           </TableRow>
         </TableHeader>
         <TableBody>
           {data.map(({ email, id }) => (
-            <TableRow key={id}>
+            <TableRow key={id} id={id}>
               <TableCell>{email}</TableCell>
               <TableCell className="text-right">
-                <input type="checkbox" />
+                <CheckBox id={id} />
               </TableCell>
             </TableRow>
           ))}

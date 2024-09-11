@@ -8,30 +8,32 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { getLatestContacts } from "@/lib/data";
+import CheckBox from "./CheckBox";
+import { formatPhoneNumber } from "@/lib/utils";
 
 export default async function DashboardTable() {
   // Fetch the 7 latest contacts
   const data = await getLatestContacts();
 
   return (
-    <Table>
+    <Table className="overflow-hidden">
       <TableCaption>A list of your recent Leads.</TableCaption>
       <TableHeader>
         <TableRow>
           <TableHead className="w-[100px]">Name</TableHead>
           <TableHead>Number</TableHead>
           <TableHead>Email</TableHead>
-          <TableHead className="text-right">Contacted</TableHead>
+          <TableHead className="text-right">Delete</TableHead>
         </TableRow>
       </TableHeader>
       <TableBody>
         {data.map(({ name, email, phone, id }) => (
-          <TableRow key={id}>
+          <TableRow key={id} id={id}>
             <TableCell className="font-medium">{name}</TableCell>
-            <TableCell>{phone}</TableCell>
+            <TableCell>{formatPhoneNumber(phone)}</TableCell>
             <TableCell>{email}</TableCell>
             <TableCell className="text-center">
-              <input type="checkbox" />
+              <CheckBox id={id} />
             </TableCell>
           </TableRow>
         ))}

@@ -20,7 +20,6 @@ export default async function Dashboard() {
         <h2 className="text-sm capitalize font-medium">Contacts This Month</h2>
         <p className="text-3xl font-bold pt-2">+{data.contactsThisMonth}</p>
         <p className="text-slate-400 text-sm">
-          +
           {isNaN((data.contactsLastMonth / data.contactsThisMonth) * 100)
             ? 0
             : (data.contactsLastMonth / data.contactsThisMonth) * 100}
@@ -30,7 +29,12 @@ export default async function Dashboard() {
       <div className="col-span-3 row-span-3 border-2 border-slate-200 rounded-xl p-5">
         <h2 className="text-sm capitalize font-medium">Contacts Last Month</h2>
         <p className="text-3xl font-bold pt-2">+{data.contactsLastMonth}</p>
-        <p className="text-slate-400 text-sm">+{}% from last month</p>
+        <p className="text-slate-400 text-sm">
+          {isNaN((data.contactsTwoMonthsAgo / data.contactsLastMonth) * 100)
+            ? 0
+            : (data.contactsTwoMonthsAgo / data.contactsLastMonth) * 100}
+          % from last month
+        </p>
       </div>
       <div className="col-span-3 row-span-3 border-2 border-slate-200 rounded-xl p-5">
         <h2 className="text-sm capitalize font-medium">
@@ -40,7 +44,6 @@ export default async function Dashboard() {
           +{data.subscriptionsThisMonth}
         </p>
         <p className="text-slate-400 text-sm">
-          +
           {isNaN(
             (data.subscriptionsLastMonth / data.subscriptionsThisMonth) * 100
           )
@@ -56,7 +59,15 @@ export default async function Dashboard() {
         <p className="text-3xl font-bold pt-2">
           +{data.subscriptionsLastMonth}
         </p>
-        <p className="text-slate-400 text-sm">+10% from last month</p>
+        <p className="text-slate-400 text-sm">
+          {isNaN(
+            (data.subscriptionsTwoMonthsAgo / data.subscriptionsLastMonth) * 100
+          )
+            ? 0
+            : (data.subscriptionsTwoMonthsAgo / data.subscriptionsLastMonth) *
+              100}
+          % from last month
+        </p>
       </div>
       <div className="col-span-7 row-span-9 border-2 border-slate-200 rounded-xl">
         <DashboardChart />

@@ -22,6 +22,15 @@ export async function getDashboardData() {
     },
   });
 
+  const contactsTwoMonthsAgo = await prisma.contact.count({
+    where: {
+      createdAt: {
+        gte: new Date(new Date().setMonth(new Date().getMonth() - 2, 1)), // First day of the month before last
+        lt: new Date(new Date().setMonth(new Date().getMonth() - 1, 1)), // First day of the last month
+      },
+    },
+  });
+
   const subscriptionsThisMonth = await prisma.newsletter.count({
     where: {
       createdAt: {
@@ -39,11 +48,22 @@ export async function getDashboardData() {
     },
   });
 
+  const subscriptionsTwoMonthsAgo = await prisma.newsletter.count({
+    where: {
+      createdAt: {
+        gte: new Date(new Date().setMonth(new Date().getMonth() - 2, 1)), // First day of the month before last
+        lt: new Date(new Date().setMonth(new Date().getMonth() - 1, 1)), // First day of the last month
+      },
+    },
+  });
+
   return {
     contactsThisMonth,
     contactsLastMonth,
+    contactsTwoMonthsAgo,
     subscriptionsThisMonth,
     subscriptionsLastMonth,
+    subscriptionsTwoMonthsAgo,
   };
 }
 

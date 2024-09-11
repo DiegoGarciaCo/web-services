@@ -19,3 +19,10 @@ export interface ErrorObject {
   email?: string;
   message?: string;
 }
+
+export interface chartData {
+  month: string;
+  year: number;
+  contactsCount: number;
+  subscriptionsCount: number;
+}

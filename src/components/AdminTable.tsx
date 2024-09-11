@@ -8,6 +8,8 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { getContacts } from "@/lib/data";
+import CheckBox from "./CheckBox";
+import { formatPhoneNumber } from "@/lib/utils";
 
 export default async function AdminTable() {
   // Fetch all contacts
@@ -22,17 +24,17 @@ export default async function AdminTable() {
             <TableHead>Name</TableHead>
             <TableHead>Number</TableHead>
             <TableHead>Email</TableHead>
-            <TableHead className="text-right">Contacted</TableHead>
+            <TableHead className="text-right">Delete</TableHead>
           </TableRow>
         </TableHeader>
         <TableBody>
           {data.map(({ name, email, phone, id }) => (
-            <TableRow key={id}>
+            <TableRow key={id} id={id}>
               <TableCell className="font-medium">{name}</TableCell>
-              <TableCell>{phone}</TableCell>
+              <TableCell>{formatPhoneNumber(phone)}</TableCell>
               <TableCell>{email}</TableCell>
               <TableCell className="text-right">
-                <input type="checkbox" />
+                <CheckBox id={id} />
               </TableCell>
             </TableRow>
           ))}

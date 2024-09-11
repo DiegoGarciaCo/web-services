@@ -10,21 +10,9 @@ import {
   ChartTooltip,
   ChartTooltipContent,
 } from "@/components/ui/chart";
-
-const chartData = [
-  { month: "January", Contacts: 186, Newsletters: 80 },
-  { month: "February", Contacts: 305, Newsletters: 200 },
-  { month: "March", Contacts: 237, Newsletters: 120 },
-  { month: "April", Contacts: 73, Newsletters: 190 },
-  { month: "May", Contacts: 209, Newsletters: 130 },
-  { month: "June", Contacts: 214, Newsletters: 140 },
-  { month: "July", Contacts: 190, Newsletters: 90 },
-  { month: "August", Contacts: 210, Newsletters: 100 },
-  { month: "September", Contacts: 230, Newsletters: 150 },
-  { month: "October", Contacts: 240, Newsletters: 160 },
-  { month: "November", Contacts: 250, Newsletters: 170 },
-  { month: "December", Contacts: 260, Newsletters: 180 },
-];
+import { useEffect, useState } from "react";
+import { chartData } from "@/lib/definitions";
+import { Skeleton } from "./ui/skeleton";
 
 const chartConfig = {
   Contacts: {
@@ -38,6 +26,86 @@ const chartConfig = {
 } satisfies ChartConfig;
 
 export default function DashboardChart() {
+  // state to store the chart data
+  const [data, setData] = useState<chartData[]>([]);
+
+  // useEffect to fetch the chart data
+  useEffect(() => {
+    async function fetchData() {
+      const response = await fetch("/api/chartData");
+      const data: chartData[] = await response.json();
+      setData(data);
+    }
+    fetchData();
+  }, []);
+
+  // check if the data is empty before rendering the chart
+  if (data.length === 0) {
+    return <Skeleton className="h-full w-full rounded-xl" />;
+  }
+
+  const chartData = [
+    {
+      month: data[11].month,
+      Contacts: data[11].contactsCount,
+      Newsletters: data[11].subscriptionsCount,
+    },
+    {
+      month: data[10].month,
+      Contacts: data[10].contactsCount,
+      Newsletters: data[10].subscriptionsCount,
+    },
+    {
+      month: data[9].month,
+      Contacts: data[9].contactsCount,
+      Newsletters: data[9].subscriptionsCount,
+    },
+    {
+      month: data[8].month,
+      Contacts: data[8].contactsCount,
+      Newsletters: data[8].subscriptionsCount,
+    },
+    {
+      month: data[7].month,
+      Contacts: data[7].contactsCount,
+      Newsletters: data[7].subscriptionsCount,
+    },
+    {
+      month: data[6].month,
+      Contacts: data[6].contactsCount,
+      Newsletters: data[6].subscriptionsCount,
+    },
+    {
+      month: data[5].month,
+      Contacts: data[5].contactsCount,
+      Newsletters: data[5].subscriptionsCount,
+    },
+    {
+      month: data[4].month,
+      Contacts: data[4].contactsCount,
+      Newsletters: data[4].subscriptionsCount,
+    },
+    {
+      month: data[3].month,
+      Contacts: data[3].contactsCount,
+      Newsletters: data[3].subscriptionsCount,
+    },
+    {
+      month: data[2].month,
+      Contacts: data[2].contactsCount,
+      Newsletters: data[2].subscriptionsCount,
+    },
+    {
+      month: data[1].month,
+      Contacts: data[1].contactsCount,
+      Newsletters: data[1].subscriptionsCount,
+    },
+    {
+      month: data[0].month,
+      Contacts: data[0].contactsCount,
+      Newsletters: data[0].subscriptionsCount,
+    },
+  ];
   return (
     <ChartContainer config={chartConfig} className="min-h-[200px] w-full">
       <BarChart accessibilityLayer data={chartData}>
