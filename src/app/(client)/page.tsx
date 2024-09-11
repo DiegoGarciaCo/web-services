@@ -43,6 +43,10 @@ export default function Home() {
         </div>
       </section>
       <main>
+        <section>About</section>
+        <section></section>
+        <section></section>
+        <section></section>
         <section className="p-8 w-full h-[60vh]">
           <Newsletter />
         </section>

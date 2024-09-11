@@ -2,18 +2,26 @@
 import NavLinks from "./NavLinks";
 import Button from "./Button";
 import { useState, useEffect } from "react";
-import { useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
+import Link from "next/link";
 
 export default function Navbar() {
   // State to check if the navbar is active
   const [isActive, setIsActive] = useState(false);
 
-  //  Get Next.js router instance
-  const router = useRouter();
+  // Get pathname
+  const pathname = usePathname();
 
   // useEffect to handle scroll event on client side
   useEffect(() => {
     if (typeof window !== "undefined") {
+      if (pathname !== "/") {
+        setIsActive(true);
+        return;
+      } else if (pathname === "/") {
+        setIsActive(false);
+      }
+
       const handleScroll = () => {
         setIsActive(window.scrollY > 100);
       };
@@ -24,7 +32,8 @@ export default function Navbar() {
         window.removeEventListener("scroll", handleScroll);
       };
     }
-  }, []);
+  }, [pathname]);
+
   return (
     <nav
       className={`flex content-center justify-center sticky top-0 z-20 w-full h-20 ${
@@ -42,8 +51,7 @@ export default function Navbar() {
           buttonStyle="btn--nav"
           buttonSize="btn--medium"
           type="button"
-          onClick={() => router.push("/contact")}
-          text="Contact"
+          text={<Link href="/contact">Contact</Link>}
         />
       </div>
     </nav>
