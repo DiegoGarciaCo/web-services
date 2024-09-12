@@ -3,7 +3,7 @@ import { navLinks } from "@/lib/definitions";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-export default function NavLinks() {
+export default function NavLinks({ className }: { className?: string }) {
   const links: navLinks[] = [
     {
       path: "/",
@@ -27,7 +27,7 @@ export default function NavLinks() {
   const currentPath = usePathname();
 
   return (
-    <div className="flex justify-evenly content-center gap-8">
+    <div className={`${className} md:flex md:gap-3 md:items-center`}>
       {/* create links  */}
       {links.map((link, index) => {
         const isActive = currentPath === link.path;

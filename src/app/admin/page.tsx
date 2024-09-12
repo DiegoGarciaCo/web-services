@@ -15,8 +15,8 @@ export default async function Dashboard() {
   const data = await getDashboardData();
 
   return (
-    <section className="container grid grid-cols-12 grid-rows-12 gap-4 py-5 max-h-screen">
-      <div className="col-span-3 row-span-3 border-2 border-slate-200 rounded-xl p-5">
+    <section className="container grid grid-cols-2 md:grid-cols-12 md:grid-rows-12 gap-4 py-5 md:max-h-screen">
+      <div className="md:col-span-3 md:row-span-3 border-2 border-slate-200 rounded-xl p-5">
         <h2 className="text-sm capitalize font-medium">Contacts This Month</h2>
         <p className="text-3xl font-bold pt-2">+{data.contactsThisMonth}</p>
         <p className="text-slate-400 text-sm">
@@ -26,7 +26,7 @@ export default async function Dashboard() {
           % from last month
         </p>
       </div>
-      <div className="col-span-3 row-span-3 border-2 border-slate-200 rounded-xl p-5">
+      <div className="md:col-span-3 md:row-span-3 border-2 border-slate-200 rounded-xl p-5">
         <h2 className="text-sm capitalize font-medium">Contacts Last Month</h2>
         <p className="text-3xl font-bold pt-2">+{data.contactsLastMonth}</p>
         <p className="text-slate-400 text-sm">
@@ -36,7 +36,7 @@ export default async function Dashboard() {
           % from last month
         </p>
       </div>
-      <div className="col-span-3 row-span-3 border-2 border-slate-200 rounded-xl p-5">
+      <div className="md:col-span-3 md:row-span-3 border-2 border-slate-200 rounded-xl p-5">
         <h2 className="text-sm capitalize font-medium">
           Subcriptions This Month
         </h2>
@@ -52,7 +52,7 @@ export default async function Dashboard() {
           % from last month
         </p>
       </div>
-      <div className="col-span-3 row-span-3 border-2 border-slate-200 rounded-xl p-5">
+      <div className="md:col-span-3 md:row-span-3 border-2 border-slate-200 rounded-xl p-5">
         <h2 className="text-sm capitalize font-medium flex justify-between">
           Subcriptions Last Month
         </h2>
@@ -69,10 +69,10 @@ export default async function Dashboard() {
           % from last month
         </p>
       </div>
-      <div className="col-span-7 row-span-9 border-2 border-slate-200 rounded-xl">
+      <div className="md:col-span-7 md:row-span-9 col-span-2 border-2 border-slate-200 rounded-xl">
         <DashboardChart />
       </div>
-      <div className="col-span-5 row-span-9 border-2 border-slate-200 rounded-xl">
+      <div className="md:col-span-5 md:row-span-9 col-span-2 border-2 border-slate-200 rounded-xl">
         <DashboardTable />
       </div>
     </section>

@@ -8,6 +8,7 @@ import Link from "next/link";
 export default function Navbar() {
   // State to check if the navbar is active
   const [isActive, setIsActive] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
   // Get pathname
   const pathname = usePathname();
@@ -36,23 +37,41 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`flex content-center justify-center sticky top-0 z-20 w-full h-20 ${
+      className={`flex items-center justify-between sticky top-0 z-20 w-full h-20 ${
         isActive ? "active" : "bg-transparent"
       } items-center px-5`}
     >
       {/* left logo and links container */}
-      <div className="flex space-x-5 text-white items-center w-3/4 justify-around">
-        <h1 className="text-4xl px-5 uppercase">Logo</h1>
-        <NavLinks />
+      <div className="text-white md:flex md:items-center md:justify-around md:w-10/12">
+        <h1 className="text-4xl uppercase">Logo</h1>
+        <div>
+          <NavLinks className="hidden" />
+        </div>
       </div>
       {/* Right button */}
-      <div className="flex items-center w-1/4">
+      <div className="md:flex items-center hidden w-1/4">
         <Button
           buttonStyle="btn--nav"
           buttonSize="btn--medium"
           type="button"
           text={<Link href="/contact">Contact</Link>}
         />
+      </div>
+      <Button
+        buttonStyle="btn--nav md:hidden"
+        buttonSize="btn--medium"
+        type="button"
+        text={<div className={isOpen ? "fa fa-xmark" : "fa fa-bars"}></div>}
+        onClick={() => setIsOpen(!isOpen)}
+      />
+      <div
+        className={`md:hidden transition-opacity duration-500 ease-in-out ${
+          isOpen
+            ? "opacity-100 visible absolute top-0 left-0 bg-[#0d144f] w-full h-screen -z-10 fade-in-30"
+            : "opacity-0 invisible absolute top-0 left-0"
+        }`}
+      >
+        <NavLinks className="flex flex-col items-center justify-center gap-2 text-white h-full w-full text-xl" />
       </div>
     </nav>
   );

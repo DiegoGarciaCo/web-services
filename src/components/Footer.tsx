@@ -9,7 +9,7 @@ export default function Footer() {
         <h1 className="text-4xl cursor-pointer">
           <Link href={"/admin"}>LOGO</Link>
         </h1>
-        <NavLinks />
+        <NavLinks className="hidden" />
         <div className="flex items-center">
           <span className="social facebook">
             <i className="fab fa-facebook-f"></i>

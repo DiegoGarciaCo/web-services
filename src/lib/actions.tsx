@@ -2,6 +2,7 @@
 import { z } from "zod";
 import prisma from "./db";
 import { ErrorObject } from "./definitions";
+import { signOut } from "@/auth";
 
 const contactSchema = z.object({
   name: z
@@ -150,4 +151,9 @@ export async function deleteOldSubscriptions() {
       },
     },
   });
+}
+
+// Sign out the user
+export async function signUserOut() {
+  await signOut();
 }
