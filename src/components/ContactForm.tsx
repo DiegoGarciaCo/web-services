@@ -3,7 +3,6 @@ import { captureLead } from "@/lib/actions";
 import Button from "./Button";
 import { useFormState, useFormStatus } from "react-dom";
 import { useEffect, useRef, useState } from "react";
-import { set } from "zod";
 
 export function SubmitButton() {
   const { pending } = useFormStatus();
@@ -17,7 +16,13 @@ export function SubmitButton() {
   );
 }
 
-export default function ContactForm() {
+export default function ContactForm({
+  heading,
+  text,
+}: {
+  heading?: string;
+  text?: string;
+}) {
   const [state, action] = useFormState(captureLead, {});
   const formRef = useRef<any>(null);
   const [formMessages, setFormMessages] = useState<any>();
@@ -49,47 +54,50 @@ export default function ContactForm() {
 
   return (
     <div className="flex flex-col items-center justify-center w-full h-full">
-      <h2 className="text-3xl font-bold text-center pb-5">Contact</h2>
+      <h2 className="md:text-3xl text-2xl font-bold text-center pb-2">
+        {heading}
+      </h2>
+      <p className="text-center pb-5 md:w-1/2">{text}</p>
       <form
-        className="flex flex-col justify-center w-1/3 pb-5"
+        className="flex flex-col justify-center md:w-1/3 w-5/6 pb-5"
         action={action}
         ref={formRef}
       >
         <label htmlFor="name" className="font-bold">
-          Name:
+          Name:<span className="text-red-800">*</span>
         </label>
         <input
           type="text"
           name="name"
           id="name"
-          className="w-full p-2 m-2 border border-gray-400 rounded"
-          placeholder="Enter your name"
+          className="w-full p-2 my-2 border border-gray-200 rounded-lg"
+          placeholder="Full Name"
         />
         {formMessages?.name && (
           <p className="text-red-800">{formMessages.name}</p>
         )}
         <label htmlFor="phone" className="font-bold">
-          Phone:
+          Phone:<span className="text-red-800">*</span>
         </label>
         <input
           type="tel"
           name="phone"
           id="phone"
-          className="w-full p-2 m-2 border border-gray-400 rounded"
-          placeholder="Enter your phone number"
+          className="w-full p-2 my-2 border border-gray-200 rounded-lg"
+          placeholder="Phone Number"
         />
         {formMessages?.phone && (
           <p className="text-red-800">{formMessages.phone}</p>
         )}
         <label htmlFor="email" className="font-bold">
-          Email:
+          Email:<span className="text-red-800">*</span>
         </label>
         <input
           type="email"
           name="email"
           id="email"
-          className="w-full p-2 m-2 border border-gray-400 rounded hove"
-          placeholder="Enter your email"
+          className="w-full p-2 my-2 border border-gray-200 rounded-lg"
+          placeholder="Email"
         />
         {formMessages?.email && (
           <p className="text-red-800">{formMessages.email}</p>
@@ -100,8 +108,8 @@ export default function ContactForm() {
         <textarea
           name="message"
           id="message"
-          className="w-full h-40 p-2 m-2 border border-gray-400 rounded"
-          placeholder="Enter your message"
+          className="w-full h-40 p-2 my-2 border border-gray-200 rounded-lg"
+          placeholder="Enter your message..."
         />
         {formMessages?.message && (
           <p className="text-red-800">{formMessages.message}</p>
@@ -114,7 +122,7 @@ export default function ContactForm() {
         ) : (
           <p className="text-red-800 p-2 text-center">{state.output}</p>
         )}
-        <div className="flex items-center w-full justify-center">
+        <div className="flex w-full items-center justify-start">
           <SubmitButton />
         </div>
       </form>

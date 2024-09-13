@@ -11,7 +11,7 @@ export default function Home() {
   return (
     <div className="overflow-x-hidden">
       {/* Hero Section */}
-      <section className="flex h-[87vh] flex-col items-start justify-center p-16 overflow-hidden max-w-full">
+      <section className="flex h-[87vh] flex-col items-start justify-center md:p-16 p-2 overflow-hidden max-w-full">
         <video
           className="absolute top-0 left-0 w-full h-full object-cover -z-10"
           autoPlay
@@ -22,12 +22,14 @@ export default function Home() {
         </video>
         {/* hero content left aligned */}
         <div className="flex flex-col items-start justify-center w-full text-[#f7f7f7]">
-          <h1 className="text-4xl font-bold">Stay Ahead with Visionary Edge</h1>
+          <h1 className="text-4xl font-bold">
+            Stay Ahead with
+            <br /> Visionary Edge
+          </h1>
           <p className="mt-4 leading-5 md:w-1/2">
-            Visionary Edge drives business success with cutting-edge strategies
-            and innovative solutions. Our forward-thinking approach keeps your
-            brand at the forefront of industry trends, delivering exceptional
-            results through visionary insights and practical expertise.
+            Visionary Edge drives success with cutting-edge strategies and
+            innovative solutions, blending insights and expertise to keep your
+            brand ahead of trends.
           </p>
           <div className="flex mt-8 gap-4">
             <Button
@@ -97,7 +99,11 @@ export default function Home() {
         </section>
         {/* Contact Form Section */}
         <section className="flex justify-center items-center min-h-screen w-full">
-          <ContactForm />
+          <ContactForm
+            heading="Still Have a Question?"
+            text="Contact us toady with any question or leave your information and we will
+        get in contact with you."
+          />
         </section>
       </main>
     </div>

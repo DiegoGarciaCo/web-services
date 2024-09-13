@@ -14,10 +14,7 @@ const contactSchema = z.object({
     .min(10, { message: "Phone number must be 10 digits" })
     .max(10, { message: "Phone number must be 10 digits" }),
   email: z.string().email(),
-  message: z
-    .string()
-    .min(1, { message: "Message is required" })
-    .max(1000, { message: "Message is too long" }),
+  message: z.string().optional(),
 });
 
 const newsletterSchema = z.object({
@@ -43,7 +40,10 @@ export async function captureLead(
 
     // Save the data to the database
     await prisma.contact.create({
-      data: formData,
+      data: {
+        ...formData,
+        message: formData.message || "",
+      },
     });
     return { success: true, output: "Form submitted successfully!" };
   } catch (error) {

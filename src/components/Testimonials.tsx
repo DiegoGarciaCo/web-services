@@ -68,14 +68,14 @@ export function Testimonials() {
         {testimonials.map((testimonial, index) => (
           <CarouselItem key={index}>
             <div className="p-1 flex flex-col justify-center items-center">
-              <p className="text-center py-8 px-80">{testimonial.review}</p>
+              <p className="text-center py-8 md:px-80">{testimonial.review}</p>
               <div className="flex items-center justify-center py-2">
                 <img
                   src={testimonial.image}
                   alt={testimonial.name}
                   className="rounded-full h-20 w-20"
                 />
-                <div className="p-8">
+                <div className="md:p-8 p-3">
                   <p>{testimonial.name}</p>
                   <p>{testimonial.title}</p>
                   <p>{testimonial.company}</p>

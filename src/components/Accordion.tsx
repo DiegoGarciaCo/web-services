@@ -45,7 +45,7 @@ export function AccordionVariant() {
       </AccordionItem>
       <AccordionItem
         value="animation-properties"
-        className="p-2 border-zinc-300 border-2 mb-1 mt-2"
+        className="p-2 border-zinc-200 border-2"
       >
         <AccordionTrigger className="w-full py-0.5 text-left text-zinc-950 dark:text-zinc-50">
           <div className="flex items-center">
@@ -66,7 +66,7 @@ export function AccordionVariant() {
       </AccordionItem>
       <AccordionItem
         value="advanced-features"
-        className="p-2 border-zinc-300 border-2 mb-2 mt-1"
+        className="p-2 border-zinc-300 border-2"
       >
         <AccordionTrigger className="w-full py-0.5 text-left text-zinc-950 dark:text-zinc-50">
           <div className="flex items-center">
@@ -87,7 +87,7 @@ export function AccordionVariant() {
       </AccordionItem>
       <AccordionItem
         value="community-support"
-        className="p-2 border-zinc-300 border-2 mb-2"
+        className="p-2 border-zinc-200 border-2"
       >
         <AccordionTrigger className="w-full py-0.5 text-left text-zinc-950 dark:text-zinc-50">
           <div className="flex items-center">
@@ -108,7 +108,7 @@ export function AccordionVariant() {
       </AccordionItem>
       <AccordionItem
         value="random-question"
-        className="p-2 border-zinc-300 border-2 mb-2"
+        className="p-2 border-zinc-200 border-2"
       >
         <AccordionTrigger className="w-full py-0.5 text-left text-zinc-950 dark:text-zinc-50">
           <div className="flex items-center">
@@ -129,7 +129,7 @@ export function AccordionVariant() {
       </AccordionItem>
       <AccordionItem
         value="random-value"
-        className="p-2 border-zinc-300 border-2"
+        className="p-2 border-zinc-200 border-2"
       >
         <AccordionTrigger className="w-full py-0.5 text-left text-zinc-950 dark:text-zinc-50">
           <div className="flex items-center">

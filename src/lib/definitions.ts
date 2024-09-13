@@ -26,3 +26,9 @@ export interface chartData {
   contactsCount: number;
   subscriptionsCount: number;
 }
+export interface productCardProps {
+  title: string;
+  description: string;
+  image: string;
+  catagory: string;
+}
