@@ -1,6 +1,7 @@
 "use client";
 
 import { Bar, BarChart, CartesianGrid, XAxis } from "recharts";
+import useSWR from "swr";
 
 import {
   ChartConfig,
@@ -26,22 +27,23 @@ const chartConfig = {
 } satisfies ChartConfig;
 
 export default function DashboardChart() {
-  // state to store the chart data
-  const [data, setData] = useState<chartData[]>([]);
+  // Fetch the chart data
+  const fetcher = (url: string) => fetch(url).then((res) => res.json());
+  const { data, error, isLoading } = useSWR("/api/chartData", fetcher);
 
-  // useEffect to fetch the chart data
-  useEffect(() => {
-    async function fetchData() {
-      const response = await fetch("/api/chartData");
-      const data: chartData[] = await response.json();
-      setData(data);
-    }
-    fetchData();
-  }, []);
-
-  // check if the data is empty before rendering the chart
-  if (data.length === 0) {
-    return <Skeleton className="h-full w-full rounded-xl" />;
+  // Show a loading skeleton while the data is being fetched
+  if (isLoading) {
+    return (
+      <div className="h-full w-full">
+        <Skeleton className="h-full w-full" />
+      </div>
+    );
+  } else if (error) {
+    return (
+      <div className="flex items-center justify-center">
+        Error loading chart data
+      </div>
+    );
   }
 
   const chartData = [
