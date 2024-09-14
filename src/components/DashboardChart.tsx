@@ -11,8 +11,6 @@ import {
   ChartTooltip,
   ChartTooltipContent,
 } from "@/components/ui/chart";
-import { useEffect, useState } from "react";
-import { chartData } from "@/lib/definitions";
 import { Skeleton } from "./ui/skeleton";
 
 const chartConfig = {

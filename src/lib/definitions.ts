@@ -32,3 +32,9 @@ export interface productCardProps {
   image: string;
   catagory: string;
 }
+
+export interface dashboardCardProps {
+  title: string;
+  data: number;
+  percentage: number;
+}
